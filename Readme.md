@@ -55,6 +55,23 @@ Explore its test layout and structure.
 
 ## Mocking in Rust
 
+Mocking is a technique used to test code that depends on other code. It is used to simulate the behavior of the code 
+that the code under test depends on.
+
+### Reasons to use mocking
+- Control over test environment
+- Isolation of component for unit testing
+- Improve test stability and reliability
+- Efficiency and speed
+- Enable testing of unavailable or incomplete components
+
+- Test code that depends on external services, databases, or other code that is difficult to test.
+- Test code that depends on code that is not yet implemented or not available.
+- Test code that depends on code that is difficult to test.
+- Improve test performance by using mock objects to simulate the behavior of the code that the code under test depends on.
+
+Use the mockall crate to create mock objects for testing.
+
 Use crates for test APIs
 
 Use mockall crates
