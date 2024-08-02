@@ -1,3 +1,12 @@
+fn call_api(zip_code: &str) -> String {
+    // Call an external API to get basic weather information
+    "is sunny today!".to_string()
+}
+
+fn format_final_message(zip_code: &str, message: &str) -> String {
+    format!("The weather in your area (ZIP: {}) {}", zip_code, message)
+}
+
 pub fn create_message_whether(zip_code: &str) -> String {
     if zip_code.trim().is_empty() {
         return "Zip code is empty".to_string();
