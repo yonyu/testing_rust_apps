@@ -11,7 +11,7 @@ pub struct Person {
 impl Person {
     pub fn create_greeting(&self) -> String {
         let name_message = message_name::create_message_name(&self.name);
-        let birthday_message = message_birthday::create_message_birthday(&self.date_of_birth);
+        let birthday_message = message_birthday::create_message_birthday(self.date_of_birth);
         let weather_message = message_whether::create_message_whether(&self.zip_code);
 
         format!("{} {} {}", name_message, birthday_message, weather_message)
