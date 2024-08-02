@@ -1,3 +1,14 @@
+# Testing Rust applications with Unit tests, Integration tests, and Mock
+
+To follow along the code, check out the following branches in order
+
+- Initial_code
+- unit_tests
+- integration_tests
+- mocking_with_mockall
+
+## Some commands used
+
 > md testing_rust_apps
 > 
 > cd testing_rust_apps
