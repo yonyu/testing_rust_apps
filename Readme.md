@@ -74,7 +74,12 @@ Use the mockall crate to create mock objects for testing.
 
 Use crates for test APIs
 
-Use mockall crates
+### Use mockall crates
 
 > cargo add mockall
+
+[mockall](https://docs.rs/mockall/latest/mockall) is a Rust library that provides a macro for creating mock objects for testing. It is used to simulate 
+the behavior of the code that the code under test depends on.
+
+The other mock crate is mock-it. Its source code is available on [GitHub](https://github.com/nathanielsimard/mock-it).
 

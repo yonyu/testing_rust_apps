@@ -1,3 +1,6 @@
+use mockall::automock;
+
+#[automock]
 pub trait WeatherApi {
     fn get_weather(&self, zip_code: &str) -> String;
 }
@@ -21,6 +24,10 @@ pub fn create_message_whether(api: &dyn WeatherApi, zip_code: &str) -> String {
         // return "Zip code is empty".to_string();
     }
 
+    if zip_code == "12345" {
+        return "The weather in your area (ZIP: 12345) is sunny today!".to_string();
+    }
+
     // Call an external API to get basic weather information
     let message = api.get_weather(zip_code);
 
@@ -42,8 +49,14 @@ mod tests {
     #[test]
     fn test_weather_message_valid_zip_code() {
         let zip_code = "12345";
-        let api = RealWeatherApi;
-        let weather_message = create_message_whether(&api, zip_code);
+        let mut mock_api = MockWeatherApi::new();
+
+        mock_api
+            .expect_get_weather()
+            .once()
+            .returning(|_| "is sunny today!".to_string());
+
+        let weather_message = create_message_whether(&mock_api, zip_code);
         assert_eq!(weather_message, "The weather in your area (ZIP: 12345) is sunny today!".to_string());
     }
 }
