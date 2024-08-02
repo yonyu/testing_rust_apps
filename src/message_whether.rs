@@ -1,4 +1,4 @@
-fn call_api(zip_code: &str) -> String {
+fn call_api(_zip_code: &str) -> String {
     // Call an external API to get basic weather information
     "is sunny today!".to_string()
 }
@@ -13,9 +13,9 @@ pub fn create_message_whether(zip_code: &str) -> String {
     }
 
     // Call an external API to get basic weather information
-    let message = "is sunny today!";
+    let message = call_api(zip_code);
 
-    format!("The weather in your area (ZIP: {}) {}", zip_code, message)
+    format_final_message(zip_code, &message)
 }
 
 #[cfg(test)]
