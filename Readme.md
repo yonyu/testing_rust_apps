@@ -28,12 +28,32 @@
 > cargo test -- --partial_name_in_test_functions
 > 
 > cargo test -- --exact_name_in_test_functions
-_
-Use [Chrono: Timezone-aware date and time handling](https://crates.io/crates/chrono) as an example. Get the [source code](https://github.com/chronotope/chrono) from GitHub. Explore its test layout and structure.
 
 > cargo add chrono
 
-Mocking in Rust
+
+## Unit tests
+
+Unit tests are used to test individual units of code. They are placed in the same file as the code they are testing.
+
+It is a developer's description whether to test private functions or not. 
+
+## Integration tests
+
+Integration tests are used to test the interaction between multiple modules. They are placed in the tests directory. 
+The tests directory is a sibling of the src directory.
+
+You can create subdirectories in the tests directory to organize your tests.
+
+Integration tests make sure that the modules work together as expected.
+
+### Integration test example
+
+Use [Chrono: Timezone-aware date and time handling](https://crates.io/crates/chrono) as an example. Get the [source code](https://github.com/chronotope/chrono) from GitHub. 
+Explore its test layout and structure.
+
+
+## Mocking in Rust
 
 Use crates for test APIs
 

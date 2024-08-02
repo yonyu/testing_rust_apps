@@ -1,6 +1,6 @@
-mod message_whether;
 mod message_birthday;
 mod message_name;
+mod message_whether;
 
 pub struct Person {
     pub name: String,
